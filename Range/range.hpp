@@ -24,8 +24,7 @@ namespace my
 			: first_{ T{0} }, last_{ stop }, step_{ T{1} }
 		{ check_range(first_, last_, step_); }
 
-		class range_iterator
-			: public std::iterator<std::input_iterator_tag, T>
+		class range_iterator : public std::iterator<std::input_iterator_tag, T>
 		{
 			friend class range<T>;
 
