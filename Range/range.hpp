@@ -11,16 +11,15 @@ namespace my
 	class range
 	{
 	public:
-		range() = delete;
-		range(T start, T stop, T step)
+		explicit range(T start, T stop, T step)
 			: first_{ start }, last_{ stop }, step_{ step } 
 		{ check_range(first_, last_, step_); }
 
-		range(T stop, T step)
+		explicit range(T stop, T step)
 			: first_{ T{0} }, last_{ stop }, step_{ step } 
 		{ check_range(first_, last_, step_); }
 
-		range(T stop)
+		explicit range(T stop)
 			: first_{ T{0} }, last_{ stop }, step_{ T{1} }
 		{ check_range(first_, last_, step_); }
 
